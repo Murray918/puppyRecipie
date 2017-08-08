@@ -23,10 +23,17 @@ function searchFn() {
       // examine the text in the response
       response.json().then(function(data) {
         console.log(data);
-            data.forEach(function(g) {
-              let template = `<div class="result" id="title">${g.title}</div>
-        <div class="result" id="href">${g.href}</div>
-        <dt class="result" id="ingrediants"><dl> ${g.ingredients}</dl></dt>`;
+
+
+            data.results.forEach(function(g) {
+              if (g.thumbnail === ''){
+                g.thumbnail = 'http://via.placeholder.com/100x70  '
+              }
+              let template = `<div class="each">
+              <div class="result" class="title"><h3>${g.title}</h3></div>
+              <div class="result" class="image"><a  href='${g.href}'><img src=${g.thumbnail}></a></div>
+              <div class="result" clas="ingredients"><dl>${g.ingredients}</dl></dt></div>
+              </div>`;
 
               searchWrapper.innerHTML += template
             })

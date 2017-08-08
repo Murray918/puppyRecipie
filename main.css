@@ -1,0 +1,36 @@
+body {
+  background-color: lightblue;
+  max-width: 1050px;
+
+}
+
+header{
+  margin-top: 8em;
+}
+
+section {
+  height: 10em;
+}
+
+.searchWrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.each {
+  max-width: 20%;
+  margin: 1em;
+  border: .5px solid gray;
+  padding: .5em;
+
+}
+
+.tumbnail {
+  max-width: 10%;
+
+}
+
+dl {
+  font-size: 0.7em;
+}
